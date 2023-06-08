@@ -1,0 +1,31 @@
+{
+  "name": "rsc-from-scratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "concurrently \"npm run start:ssr\" \"npm run start:rsc\"",
+    "start:rsc": "nodemon --ignore posts/ --experimental-loader ./node-jsx-loader.js ./server/rsc.js",
+    "start:ssr": "nodemon --ignore posts/ --experimental-loader ./node-jsx-loader.js ./server/ssr.js"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.2.5",
+    "eslint": "^8.42.0",
+    "eslint-plugin-react": "^7.32.2",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/plugin-transform-react-jsx": "^7.22.3",
+    "concurrently": "^8.1.0",
+    "probe-image-size": "^7.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
+    "rehype-highlight": "^6.0.0",
+    "sanitize-filename": "^1.6.3"
+  }
+}
